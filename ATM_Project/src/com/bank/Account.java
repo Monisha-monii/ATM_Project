@@ -264,7 +264,7 @@ public class Account
 						case 1: System.out.println("\nCurrent Checkings Account Balance: " + moneyFormat.format(checkingBalance));
 						System.out.println("\nAmount you want to deposit into your Savings Account: ");
 						double amount = input.nextDouble();
-						if(!((amount = 0) && (savingBalance + amount) > 0) && (checkingBalance - amount) > 0 && amount > 0)
+						if(!(amount <= 0) && (savingBalance + amount) > 0 && (checkingBalance - amount) > 0 && amount > 0)
 						{
 							calcCheckTransfer(amount);
 							System.out.println("\nCurrent Savings Account Balance: " + moneyFormat.format(savingBalance));
@@ -295,7 +295,7 @@ public class Account
 							case 1: System.out.println("\nCurrent Savings Account Balance: " + moneyFormat.format(savingBalance));
 							        System.out.println("\nAmount you want to deposit into your savings account: ");
 							        double amount = input.nextDouble();
-							        if(!((amount <= 0) && (checkingBalance + amount) > 0) && (savingBalance - amount) > 0 && amount >=0)
+							        if(!(amount < 0) && (checkingBalance + amount) > 0 && (savingBalance - amount) > 0 && amount >=0)
 							        {
 							        	calcSavingTransfer(amount);
 							        	System.out.println("\nCurrent checkings account balance: " + moneyFormat.format(checkingBalance));
@@ -323,15 +323,8 @@ public class Account
 		}
 	}
 }
-
 	
-	
-						
-		
-					
-					
-					
-					
+										
 		
 		
 		
